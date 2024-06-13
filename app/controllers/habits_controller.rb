@@ -53,8 +53,27 @@ class HabitsController < ApplicationController
     end
   
     def plus
-      @habit.update(count: @habit.count + 1)
-      render :result
+        if @habit.created_at.today?
+            last_count_date = @habit.created_at
+            current_day = Time.zone.now + 1.day
+        else
+            @habit.saved_changes.include?("count")
+            last_count_date = @habit.saved_changes["updated_at"][0]
+            current_day = Time.zone.now
+        end
+
+        day_difference = ( current_day.to_date - last_count_date.to_date).to_i
+
+        if @habit.count < day_difference
+            @habit.update(count: @habit.count + 1)
+            render :result
+        else
+            respond_to do |format|
+                format.turbo_stream { flash.now[:notice] = 
+                "You cannot track more than days you've followed 
+                '#{@habit.name.upcase}' habit!."}
+            end
+        end
     end
   
     def minus
