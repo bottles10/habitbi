@@ -53,17 +53,22 @@ class HabitsController < ApplicationController
     end
   
     def plus
+        current_day = Time.zone.now
+        last_count_date = @habit.created_at
+
         if @habit.created_at.today?
-            last_count_date = @habit.created_at
-            current_day = Time.zone.now + 1.day
-        else
-            @habit.saved_changes.include?("count")
-            last_count_date = @habit.saved_changes["updated_at"][0]
-            current_day = Time.zone.now
+            current_day += 1.day
+        end
+        
+        @habit.update(count: @habit.count)
+
+        if  @habit.saved_changes.include?("count")
+            last_count_date = @habit.saved_changes["updated_at"][1]
         end
 
         day_difference = ( current_day.to_date - last_count_date.to_date).to_i
-
+        day_difference += 1 unless @habit.created_at.today?
+        
         if @habit.count < day_difference
             @habit.update(count: @habit.count + 1)
             render :result
