@@ -11,13 +11,6 @@ document.addEventListener('turbo:load', function() {
             setTimeout(function() {
                 fadeOut.classList.add("hidden");
             }, 5000);
-
-             // Remove #flash_message from the DOM after 5 seconds
-            // setTimeout(function() {
-            //     if (flashMessage.parentNode) {
-            //         flashMessage.parentNode.removeChild(flashMessage);
-            //     }
-            // }, 5000);
         }
     }
 
