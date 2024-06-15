@@ -1,0 +1,15 @@
+<div class="hidden only:block lg:w-1/2 py-5 container mx-auto border border-pink-100 rounded-lg shadow-md">
+  <grid-illustration class="mb-8 grid grid-cols-4 gap-4 lg:gap-0">
+    <%= image_tag("runner.svg", alt: "runner", width: "150", class: "col-span-2 mx-auto") %>
+    <%= image_tag("habit-bells.svg", alt: "dumb bells exercise", width: "150", class: "col-span-2 mx-auto") %>
+    <%= image_tag("dog-walking.svg", alt: "dog walking", width: "150", class: "col-start-2 col-span-2 mx-auto") %>
+  </grid-illustration>
+      <div class="p-3 text-center text-gray-700 space-y-4">
+        <h3 class="text-4xl font-bold text-pink-700">No habits Yet!</h3>
+        <p>It look like you haven't added any habits yet. Start building great habits today!</p>       
+        <%= link_to new_habit_path, data: {turbo_frame: "new_habit"}, class: "inline-block py-1 px-3 text-sm bg-pink-500 hover:bg-pink-600 text-white rounded-full shadow hover:scale-105 transition duration-500" do %>
+            <%= heroicon "plus-circle", options: {class: "inline-block"} %> <span class="pt-1 inline-block uppercase">Add your first habit</span>
+         <% end %>
+      </div>
+    </div>
+    
