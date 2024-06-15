@@ -12,6 +12,9 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        nosifer: ["Nosifer", "sans-serif"],
+        megrim: ["Megrim", "sans-serif"],
+        rubik: ["Rubik Puddles", "sans-serif"],
       },
     },
   },
