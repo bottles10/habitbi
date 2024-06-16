@@ -1,7 +1,7 @@
 <div class="mb-4 p-5 md:p-10 md:w-2/3 lg:w-1/2 mx-auto border rounded-lg shadow-md">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, class: "md:w-1/2 mx-auto") do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
-    <div class="mb-5 shadow-xl w-full border rounded-lg">
+    <div class="mb-5 px-2 shadow-xl w-full border rounded-lg">
       <div class="mb-4 flex items-center">
         <%= f.label :email, class: "p-3 w-20 text-left mr-8 text-gray-500 font-bold" %>
         <%= f.email_field :email, autocomplete: "email", class: "w-1/2 md:w-full border-0 focus:ring-0 border-b border-gray-400 focus:border-green-400 flex-1 py-2 placeholder-gray-300 outline-none autofill:bg-transparent bg-transparent" %>
@@ -13,7 +13,7 @@
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
-      <i class="pl-2 text-blue-300 text-center text-pretty">(Leave password blank if you don't want to change it)</i><br />
+      <i class="pl-2 text-pink-300 text-center text-pretty">(Leave password blank if you don't want to change it)</i><br />
       <div class="flex items-center">
         <%= f.label :password, class: "p-3 w-20 text-right mr-8 text-gray-500 font-bold" %>
         <%= f.password_field :password, autocomplete: "password", placeholder: "", class: "w-1/2 md:w-full border-0 focus:ring-0 border-b border-gray-400 focus:border-green-400 flex-1 py-2 placeholder-gray-300 outline-none autofill:bg-transparent bg-transparent" %>
@@ -22,7 +22,7 @@
         <%= f.label :password_confirmation, class: "p-3 w-20 text-left mr-8 text-gray-500 font-bold" %>
         <%= f.password_field :password_confirmation, autocomplete: "pasword_confirmation", class: "w-1/2 md:w-full border-0 focus:ring-0 border-b border-gray-400 focus:border-green-400 flex-1 py-2 placeholder-gray-300 outline-none autofill:bg-transparent bg-transparent" %>
       </div>
-      <i class="pl-2 text-blue-300 text-pretty">(we need your current password to confirm your changes)</i><br />
+      <i class="pl-2 text-pink-300 text-pretty">(we need your current password to confirm your changes)</i><br />
       <div class="flex items-center">
         <%= f.label :current_password, class: "p-3 w-20 text-left mr-8 text-gray-500 font-bold" %>
         <%= f.password_field :current_password, autocomplete: "current_password", class: "w-1/2 md:w-full border-0 focus:ring-0 border-b border-gray-400 focus:border-green-400 flex-1 py-2 placeholder-gray-300 outline-none autofill:bg-transparent bg-transparent" %>
