@@ -69,3 +69,5 @@ end
 gem "tailwindcss-rails", "~> 2.6"
 gem "devise", "~> 4.9"
 gem 'heroicon', '~> 1.0'
+
+gem "pagy", "~> 8.4"

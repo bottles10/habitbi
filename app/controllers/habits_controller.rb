@@ -5,7 +5,11 @@ class HabitsController < ApplicationController
   
     def index
       @habits = current_user.habits.includes(:awards).ordered
+      @pagy, @habits = pagy(@habits)
       @habit = current_user.habits.build
+
+      rescue Pagy::OverflowError
+        redirect_to root_path
     end
   
     def show
