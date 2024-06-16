@@ -3,6 +3,31 @@
   <head>
     <title>Habitbi</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= asset_path 'apple-touch-icon.png' %>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= asset_path 'favicon-32x32.png' %>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= asset_path 'favicon-16x16.png' %>">
+    <link rel="manifest" href="<%= asset_path 'site.webmanifest' %>">
+    <meta name="description" content="Habitbi is A simple habit tracking app wich lets you keep tracks of the number of days you've consistently followed a habit">
+    <meta name="keywords" content="Habitbi, habit tracking, ruby on rails, rails, spa, webapp, hotwire">
+    <link rel="canonical" href="https://habitbi.onrender.com/">
+    <meta name="robots" content="index">
+    <meta property="og:title" content="Habitbi">
+    <meta property="og:description" content="Habitbi is A simple habit tracking app wich lets you keep tracks of the number of days you've consistently followed a habit">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="https://habitbi.onrender.com/">
+    <meta name="twitter:title" content="Habitbi">
+    <meta name="twitter:description" content="Habitbi is A simple habit tracking app wich lets you keep tracks of the number of days you've consistently followed a habit">
+    <meta name="twitter:image" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "WebPage",
+            "name": "Habitbi",
+            "description": "Habitbi is A simple habit tracking app wich lets you keep tracks of the number of days you've consistently followed a habit",
+            "url": "https://habitbi.onrender.com/"
+          }
+      </script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
