@@ -2,11 +2,7 @@
   <div class="relative  p-5 bg-white text-gray-500 rounded-lg shadow-lg">
     <div class="absolute top-0 right-0 md:left-0 transform -translate-x-3 -translate-y-3">
       <awards-badge class="flex items-center space-x-1 text-xs">
-        <!-- <img src="/images/medal.png" alt="medal icon" width="30" oncontextmenu="return false;">
-					<img src="/images/trophy.png" alt="medal icon" width="30" oncontextmenu="return false;">
-					<img src="/images/trophy(2).png" alt="medal icon" width="30" oncontextmenu="return false;"> -->
-        <p class="p-1 bg-gray-400 text-gray-800 rounded">silver</p>
-        <p class="p-1 bg-yellow-400 text-yellow-800 rounded">gold</p>
+        <%= render 'awards', habit: habit %>
       </awards-badge>
     </div>
     <div class="pt-5 mb-5 md:flex items-center justify-between space-y-2 md:space-y-0">
@@ -30,7 +26,7 @@
         <%= link_to edit_habit_path(habit) do %>
           <%= heroicon "pencil-square" %>
           <% end %>
-        <%= button_to habit_path(habit), method: :delete, data: { turbo_confirm: "Are you sure?" } do %>
+        <%= button_to habit_path(habit), method: :delete, data: { turbo_confirm: "Delete this habit?" } do %>
           <%= heroicon "trash" %>
           <% end %>
        

@@ -4,7 +4,7 @@ class HabitsController < ApplicationController
   
   
     def index
-      @habits = current_user.habits.ordered
+      @habits = current_user.habits.includes(:awards).ordered
       @habit = current_user.habits.build
     end
   
