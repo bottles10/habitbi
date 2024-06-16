@@ -38,10 +38,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Megrim&family=Nosifer&family=Rubik+Puddles&display=swap" rel="stylesheet">
   </head>
   <body class="font-serif bg-gradient-to-br from-pink-50 via-purple-100 to-gray-100">
-    <%= render 'layouts/header' %>
-    <div id="flash_message" class="fixed z-10 w-full">
+    <header class="fixed w-full top-0 z-10">
+      <%= render 'layouts/navigation' %>
+
       <%= render 'layouts/flashes' %>
-    </div>
+    </header>
     <main class="container mx-auto py-24 px-5">
       <%= yield %>
     </main>
