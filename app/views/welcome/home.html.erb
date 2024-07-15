@@ -12,7 +12,7 @@
             <% end %>
         </div>
         <div class="col-span-3 my-auto md:my-0">
-            <%= image_tag("jogging") %>
+            <%= image_tag("jogging.svg") %>
         </div>
         <div class="col-span-5 lg:col-span-1 lg:m-auto">
             <div class="mt-10 flex flex-wrap justify-around lg:block space-y-0 lg:space-y-12">
@@ -53,7 +53,9 @@
         <div class="absolute top-0 left-0 transform -translate-y-7 translate-x-3">
             <p class="text-4xl font-bold text-pink-300">01</p>
         </div>
-        <%= image_tag("jogging", width: "40", class: "inline-block mt-8 mb-3") %>
+          <div class="mt-8 mb-3">
+            <%= heroicon "queue-list" %>
+          </div>
         <p class="mb-3 font-bold">Create  new habit to start tracking everyday.</p>
     </div>
     <div class="relative w-full md:w-72 pl-3 pr-10 bg-pink-200 rounded">
@@ -62,7 +64,9 @@
             <p class="text-4xl font-bold text-pink-300">02</p>
         </div>
 
-        <%= image_tag("jogging", width: "40", class: "inline-block mt-8 mb-3") %>
+        <div class="mt-8 mb-3">
+            <%= heroicon "plus-circle" %>
+        </div>        
         <p class="mb-3 font-bold">Press the plus button to increase habit streak.</p>
     </div>
     <div class="!mt-12 lg:!mt-0 relative w-full md:w-72 pl-3 pr-10 bg-pink-200 rounded">
@@ -71,8 +75,10 @@
             <p class="text-4xl font-bold text-pink-300">03</p>
         </div>
 
-        <%= image_tag("jogging", width: "40", class: "inline-block mt-8 mb-3") %>
-        <p class="mb-3 font-bold">Keep increasing streaks each day to win award for habit.</p>
+          <div class="mt-8 mb-3">
+            <%= heroicon "hand-thumb-up" %>
+          </div>       
+           <p class="mb-3 font-bold">Keep increasing streaks each day to win award for habit.</p>
     </div>
 </div>
 </div>
