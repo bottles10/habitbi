@@ -9,7 +9,7 @@ class HabitsController < ApplicationController
       @habit = current_user.habits.build
 
       rescue Pagy::OverflowError
-        redirect_to root_path
+        redirect_to habits_path
     end
   
     def show

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  root 'welcome#home'
+  get 'home', to: 'welcome#home'
   devise_for :users
-  root 'habits#index'
   #get 'welcome/home'
   resources :habits do
     member do
