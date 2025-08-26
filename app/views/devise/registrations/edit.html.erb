@@ -1,39 +1,55 @@
-<div class="mb-4 p-5 md:p-10 md:w-2/3 lg:w-1/2 mx-auto border rounded-lg shadow-md">
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, class: "md:w-1/2 mx-auto") do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
-    <div class="mb-5 px-2 shadow-xl w-full border rounded-lg">
-      <div class="mb-4 flex items-center">
-        <%= f.label :email, class: "p-3 w-20 text-left mr-8 text-gray-500 font-bold" %>
-        <%= f.email_field :email, autocomplete: "email", class: "w-1/2 md:w-full border-0 focus:ring-0 border-b border-gray-400 focus:border-green-400 flex-1 py-2 placeholder-gray-300 outline-none autofill:bg-transparent bg-transparent" %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  
+  <div class="mt-8 -mb-12 flex flex-col items-center justify-center">  
+    <div class="w-full md:w-3/5 p-6 flex flex-col items-center justify-center bg-white space-y-4 shadow-2xl rounded-lg">
+      <h2 class="mb-8 text-2xl font-bold text-center">Edit profile</h2>
+
+      <%= render "devise/shared/error_messages", resource: resource %>
+    
+      <div class="w-full">
+        <%= f.label :username, class: "font-medium" %><br />
+        <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: "happy24", class: "w-full border-pink-100 focus:border-pink-500 focus:ring-0 rounded-md" %>
       </div>
-      <div class="flex items-center rounded-t-lg ">
-        <%= f.label :username, class: "p-3 w-20 text-right mr-8 text-gray-500 font-bold" %>
-        <%= f.text_field :username, autocomplete: "username", placeholder: "@username", class: "w-1/2 md:w-full border-0 focus:ring-0 border-b border-gray-400 focus:border-green-400 flex-1 py-2 placeholder-gray-300 outline-none bg-transparent" %>
+
+      <div class="w-full">
+        <%= f.label :email, class: "font-medium" %><br />
+        <%= f.email_field :email, autocomplete: "email", placeholder: "johndoe11@mail.com", class: "w-full border-pink-100 focus:border-pink-500 focus:ring-0 rounded-md" %>
       </div>
+
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
       <% end %>
-      <i class="pl-2 text-pink-300 text-center text-pretty">(Leave password blank if you don't want to change it)</i><br />
-      <div class="flex items-center">
-        <%= f.label :password, class: "p-3 w-20 text-right mr-8 text-gray-500 font-bold" %>
-        <%= f.password_field :password, autocomplete: "password", placeholder: "", class: "w-1/2 md:w-full border-0 focus:ring-0 border-b border-gray-400 focus:border-green-400 flex-1 py-2 placeholder-gray-300 outline-none autofill:bg-transparent bg-transparent" %>
+
+      <div class="w-full">
+        <%= f.label :password, class: "font-medium" %> <br>
+        <i class="text-sm">(leave blank if you don't want to change it)</i><br />
+        <%= f.password_field :password, autocomplete: "new-password", class: "w-full border-pink-100 focus:border-pink-500 focus:ring-0 rounded-md" %>
+        <% if @minimum_password_length %>
+          <br />
+          <em><%= @minimum_password_length %> characters minimum</em>
+        <% end %>
       </div>
-      <div class="flex items-center">
-        <%= f.label :password_confirmation, class: "p-3 w-20 text-left mr-8 text-gray-500 font-bold" %>
-        <%= f.password_field :password_confirmation, autocomplete: "pasword_confirmation", class: "w-1/2 md:w-full border-0 focus:ring-0 border-b border-gray-400 focus:border-green-400 flex-1 py-2 placeholder-gray-300 outline-none autofill:bg-transparent bg-transparent" %>
+
+      <div class="w-full">
+        <%= f.label :password_confirmation, class: "font-medium" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-full border-pink-100 focus:border-pink-500 focus:ring-0 rounded-md" %>
       </div>
-      <i class="pl-2 text-pink-300 text-pretty">(we need your current password to confirm your changes)</i><br />
-      <div class="flex items-center">
-        <%= f.label :current_password, class: "p-3 w-20 text-left mr-8 text-gray-500 font-bold" %>
-        <%= f.password_field :current_password, autocomplete: "current_password", class: "w-1/2 md:w-full border-0 focus:ring-0 border-b border-gray-400 focus:border-green-400 flex-1 py-2 placeholder-gray-300 outline-none autofill:bg-transparent bg-transparent" %>
+
+      <div class="w-full">
+        <%= f.label :current_password, class: "font-medium" %> <br>
+        <i class="text-sm">(current password to confirm your changes)</i><br />
+        <%= f.password_field :current_password, autocomplete: "current-password", class: "w-full border-pink-100 focus:border-pink-500 focus:ring-0 rounded-md" %>
       </div>
+
+      <div class="w-full mt-6">
+        <%= f.submit "Update", class: "btn w-full bg-pink-500 hover:bg-pink-400 text-pink-100 transition duration-300 cursor-pointer" %>
+      </div>
+      <h3>Cancel my account</h3>
+      
+      <div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: "text-red-800" %></div>
+      
+      <%= link_to "&larr; Back".html_safe, :back, class: "btn-cancel" %>
     </div>
-    <div class="text-right">
-      <%= f.submit "Update", class: "py-3 px-8 bg-green-500 hover:bg-green-400 transform hover:scale-105 text-white rounded shadow-lg transition duration-300 " %>
-    </div>
-  <% end %>
-</div>
-<div class="flex space-x-8 pl-2 items-center justify-center ">
-  <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure you want to close your account?", turbo_confirm: "Are you sure you want to close your account?" }, method: :delete, class: 'hover:text-red-600 transition duration-300' %>
-  <%= link_to "Back", :back, class: "border py-2 px-6 rounded" %>
-</div>
+  </div>
+<% end %>
+
