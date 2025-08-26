@@ -6,7 +6,7 @@
             <p class="text-gray-700">Simple tracking app, which let you keep track of the number of days you've consistently followed a habit.</p>
 
             <% if user_signed_in? %>
-              <%= link_to "See Habits", habits_path, class: "inline-block py-2 md:py-1 px-8 md:px-12 font-bold bg-pink-500 hover:bg-pink-700 text-white rounded-full transform hover:scale-105 transition-all duration-500" %>
+              <%= link_to "See Habits", habits_path, class: "inline-block py-2 md:py-1 px-8 md:px-12 font-bold md:text-sm lg:text-base bg-pink-500 hover:bg-pink-700 text-white rounded-full transform hover:scale-105 transition-all duration-500" %>
             <% else %>
               <%= link_to "Get Started", new_user_registration_path, class: "inline-block py-2 md:py-1 px-8 md:px-12 bg-pink-500 hover:bg-pink-700 text-white rounded-full transform hover:scale-105 transition-all duration-500" %>
             <% end %>
@@ -15,7 +15,7 @@
             <%= image_tag("jogging.svg") %>
         </div>
         <div class="col-span-5 lg:col-span-1 lg:m-auto">
-            <div class="mt-10 flex flex-wrap justify-around lg:block space-y-0 lg:space-y-12">
+            <div class="mt-10 flex flex-wrap justify-around lg:block space-x-2 md:space-x-0 space-y-0 lg:space-y-12">
                 <div class="space-y-2">
                     <%= image_tag("meditation.svg", width: "60") %>
                     <h6 class="font-bold">Meditation</h6>
