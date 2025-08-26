@@ -1,24 +1,78 @@
-# README
+<p align="center">
+  <img src="screenshots/logo-habitbi.png" alt="HabitBi Logo" width="150" />
+</p>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h1 align="center">HabitBi</h1>
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+**HabitBi** is a simple yet effective **habit tracking** app that helps you keep track of how many days you've consistently followed your habits and win awards🏆. Designed with focus and usability in mind, it’s built as a **Single Page Application (SPA)** and fully supports **Progressive Web App (PWA)** features, so you can install and use it like a native app.
 
-* Database creation
+🚀 **Live Demo**: [HabitBi on Render](https://habitbi.onrender.com)
 
-* Database initialization
+---
 
-* How to run the test suite
+## ✨ Features
 
-* Services (job queues, cache servers, search engines, etc.)
+- 📆 Track daily progress on your habits
+- 🔐 User authentication with Devise
+- ⚡ SPA experience with Hotwire & Turbo
+- 📱 Installable as a PWA (Progressive Web App)
+- 🎨 Beautiful, responsive design with TailwindCSS
+- 🧠 Built with StimulusJS for snappy interactivity
 
-* Deployment instructions
+---
 
-* ...
+## 🛠️ Tech Stack
+
+- **Ruby** 3.4.4
+- **Rails** 8
+- **TailwindCSS**
+- **StimulusJS**
+- **Hotwire (Turbo + Stimulus)**
+- **Devise** for authentication
+- **Hosted on Render**
+
+---
+
+## 📷 Screenshots
+
+### 🏠 Home
+![Home Screenshot](https://i.imgur.com/d8m10nM.png)
+
+---
+
+### 📝 Sign Up
+![Signup Screenshot](https://i.imgur.com/upKtMwP.png)
+
+---
+
+### 📭 No Habits Page
+![No Habits Screenshot](https://i.imgur.com/Dgjz7Un.png)
+
+---
+
+### 📋 Habits Page
+![Habits Screenshot](https://i.imgur.com/xnSPL1B.png)
+
+---
+
+## 🚀 Getting Started
+
+To run HabitBi locally:
+
+```bash
+# Clone the repository
+git clone https://github.com/bottles10/habitbi.git
+cd habitbi
+
+# Install dependencies
+bundle install
+yarn install
+
+# Set up the database
+rails db:setup
+
+# Start the development server
+bin/dev

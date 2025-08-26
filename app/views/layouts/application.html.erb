@@ -37,13 +37,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Megrim&family=Nosifer&family=Rubik+Puddles&display=swap" rel="stylesheet">
   </head>
-  <body class="font-serif bg-gradient-to-br from-pink-50 via-purple-100 to-gray-100">
+  <body class="min-h-screen flex flex-col font-serif bg-gradient-to-br from-pink-50 via-purple-100 to-gray-100">
     <header class="fixed w-full top-0 z-10">
       <%= render 'layouts/navigation' %>
 
       <%= render 'layouts/flashes' %>
     </header>
-    <main class="container mx-auto py-24 px-5">
+    <main class="flex-grow container mx-auto py-24 px-5">
       <%= yield %>
     </main>
     <%= render 'layouts/footer' %>
