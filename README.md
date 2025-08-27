@@ -28,7 +28,7 @@
 
 - **Ruby** 3.4.4
 - **Rails** 8.0.2
-- **Postgresql** for database
+- **PostgreSQL** for database
 - **TailwindCSS**
 - **StimulusJS**
 - **Hotwire (Turbo + Stimulus)**
