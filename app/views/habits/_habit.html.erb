@@ -1,7 +1,7 @@
   	<%= turbo_frame_tag(habit, class: "block w-full md:w-3/4 lg:w-1/2") do %>
   <div class="relative  p-5 bg-white text-gray-500 rounded-lg shadow-lg">
     <div class="absolute top-0 right-0 md:left-0 transform -translate-x-3 -translate-y-3">
-      <awards-badge class="flex items-center space-x-1 text-xs">
+      <awards-badge id="<%=dom_id(habit, 'awards_badge') %>" class="flex items-center space-x-1 text-xs">
         <%= render 'awards', habit: habit %>
       </awards-badge>
     </div>
@@ -10,7 +10,7 @@
       <div class="flex space-x-2 text-white">
         <%= button_to "-", minus_habit_path(habit), class: "py-1 px-3 font-extrabold bg-red-400 hover:bg-red-300 rounded-lg shadow hover:scale-105 transition duration-300" %>
         <div class="flex items-center justify-center py-1 px-3 text-sm bg-yellow-300 text-yellow-600 rounded-full">
-          <p id="<%= dom_id(habit, 'habit_counter') %>"><%= habit.count %> Days</p>
+          <p id="<%= dom_id(habit, 'habit_counter') %>"><%= pluralize(habit.count, "Day") %></p>
         </div>
         <%= button_to "+", plus_habit_path(habit), class: "py-1 px-3 font-extrabold bg-green-400 hover:bg-green-500 rounded-lg shadow hover:scale-105 transition duration-300" %>
       </div>

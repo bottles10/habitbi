@@ -1,16 +1,17 @@
 <%= turbo_stream.replace dom_id(@habit, 'habit_counter') do %>
-  <p id="<%= dom_id(@habit, 'habit_counter') %>"><%= @habit.count %> Days</p>
+  <p id="<%= dom_id(@habit, 'habit_counter') %>"><%= pluralize(@habit.count, "Day") %></p>
 <% end %>
+
 <%= turbo_stream.replace dom_id(@habit, 'time_update') do %>
   <p id="<%= dom_id(@habit, 'time_update') %>">last updated: <%= format_date(@habit.updated_at) %></p>
 <% end %>
+
 <%= turbo_stream.replace dom_id(@habit, 'habit_markers') do %>
   <%= render 'habit_streak_markers', habit: @habit %>
 <% end %>
-<%= turbo_stream.replace dom_id(@habit, 'award_badge') do %>
- <%= turbo_frame_tag dom_id(@habit, 'award_badge'), class: "flex" do %>
-<% @habit.awards.each do |award| %>
-    <%= award_badge(award) %>
-<% end  %>
-<% end %>
+
+<%= turbo_stream.replace dom_id(@habit, 'awards_badge') do %>
+  <awards-badge id="<%=dom_id(@habit, 'awards_badge') %>" class="flex items-center space-x-1 text-xs">
+    <%= render 'awards', habit: @habit %>
+  </awards-badge>
 <% end %>
